@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const service = axios.create({
-  baseURL: import.meta.env.VITE_APP_BASE_API as string | undefined, // url = base url + request url
+  baseURL: import.meta.env.VITE_APP_BASE_API as string, // url = base url + request url
   timeout: 1000 * 30, // request timeout
 })
 
