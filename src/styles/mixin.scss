@@ -1,0 +1,13 @@
+@mixin ellipsis($rowNum: 1) {
+  @if ($rowNum == 1) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $rowNum;
+    overflow: hidden;
+    word-break: break-all;
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "vue3-vite-ts-template",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^0.25.0",
+    "nprogress": "^0.2.0",
+    "pinia": "^2.0.9",
+    "vue": "^3.2.25",
+    "vue-router": "4"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.10",
+    "@types/nprogress": "^0.2.0",
+    "@typescript-eslint/eslint-plugin": "^5.10.0",
+    "@typescript-eslint/parser": "^5.10.0",
+    "@vitejs/plugin-vue": "^2.0.0",
+    "@vue/eslint-config-prettier": "^7.0.0",
+    "@vue/eslint-config-typescript": "^10.0.0",
+    "eslint": "^8.7.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.3.0",
+    "mddir": "^1.1.1",
+    "prettier": "^2.5.1",
+    "sass": "^1.49.0",
+    "sass-loader": "^12.4.0",
+    "typescript": "^4.4.4",
+    "vite": "^2.7.2",
+    "vue-tsc": "^0.29.8"
+  }
+}
