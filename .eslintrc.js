@@ -22,8 +22,8 @@ module.exports = {
     withDefaults: 'readonly',
   },
   rules: {
-    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-console': import.meta.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-debugger': import.meta.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'vue/multi-word-component-names': [
       'error',
       {
@@ -34,5 +34,6 @@ module.exports = {
     '@typescript-eslint/no-empty-function': 'off',
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': ['error'],
+    '@typescript-eslint/no-non-null-assertion': 'off',
   },
 }
