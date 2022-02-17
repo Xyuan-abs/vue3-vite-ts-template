@@ -10,9 +10,8 @@ import router from '@/router'
 import './permission'
 app.use(router)
 
-// pinia
-import { createPinia } from 'pinia'
-const pinia = createPinia()
-app.use(pinia)
+// store
+import store from '@/store'
+app.use(store)
 
 app.mount('#app')
