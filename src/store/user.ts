@@ -29,4 +29,14 @@ export const useUserStore = defineStore('user', {
       })
     },
   },
+  // 开启数据缓存
+  persist: {
+    enabled: true,
+    strategies: [
+      {
+        storage: localStorage,
+        paths: ['userName'],
+      },
+    ],
+  },
 })
