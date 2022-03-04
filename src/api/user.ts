@@ -1,12 +1,10 @@
 import request from '@/utils/request'
 
+import { loginParams, loginResult } from './types/user'
+
 /* 登录 */
-export type loginParams = {
-  account: string
-  password: string
-}
 export function login(data: loginParams) {
-  return request({
+  return request<loginResult>({
     url: '/xxx/xxx/xxx',
     method: 'post',
     data,

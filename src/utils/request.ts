@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios, { AxiosRequestConfig } from 'axios'
 
 const service = axios.create({
   baseURL: import.meta.env.VITE_APP_BASE_API as string, // url = base url + request url
@@ -27,9 +27,7 @@ service.interceptors.request.use(
 // response interceptor
 service.interceptors.response.use(
   (response) => {
-    const res = response.data
-
-    return res
+    return response
   },
   (error) => {
     console.log(error) // for debug
@@ -37,4 +35,21 @@ service.interceptors.response.use(
   }
 )
 
-export default service
+/* 接口统一返回格式 */
+export interface ResponseData<T> {
+  code: number
+  success: boolean
+  msg: string
+  data?: T
+}
+
+const request = <T = any>(config: AxiosRequestConfig): Promise<ResponseData<T>> => {
+  return new Promise((resolve, reject) => {
+    service
+      .request<ResponseData<T>>(config)
+      .then((res) => resolve(res.data))
+      .catch((err) => reject(err))
+  })
+}
+
+export default request

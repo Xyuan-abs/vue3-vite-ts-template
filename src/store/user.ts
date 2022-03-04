@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 
-import { loginParams, login } from '@/api/user'
+import { login } from '@/api/user'
+import { loginParams } from '@/api/types/user'
 
 // useUserStore could be anything like useUser, useCart
 // the first argument is a unique id of the store across your application
@@ -9,6 +10,7 @@ export const useUserStore = defineStore('user', {
     return {
       userName: 'Admin',
       type: 0,
+      token: '',
     }
   },
   getters: {
@@ -23,9 +25,12 @@ export const useUserStore = defineStore('user', {
         password,
       }
 
-      login(params).then(() => {
-        this.userName = '张三'
-        this.type = 1
+      login(params).then((res) => {
+        if (res?.data) {
+          this.userName = '张三'
+          this.type = 1
+          this.token = res.data.token
+        }
       })
     },
   },
