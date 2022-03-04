@@ -36,7 +36,7 @@ service.interceptors.response.use(
 )
 
 /* 接口统一返回格式 */
-export interface ResponseData<T> {
+interface ResponseData<T> {
   code: number
   success: boolean
   msg: string
